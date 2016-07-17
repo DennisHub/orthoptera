@@ -21,14 +21,15 @@ cat <<EOF > species.tex
 \def\tmpsongdescription{#1}%
 \def\tmpsongimage{#2}%
 \def\tmpsongsource{#3}%
-\noindent\begin{minipage}[t]{0.55\textwidth} \subsubsection{\textit{\tmpname}}  %
- {\tmpgerman} $\cdot$ {\tmpslovenian} $\cdot$ {\tmpenglish} %
+\subsubsection{\textit{\tmpname}} %
+\vspace{-1ex} {\tmpgerman} $\cdot$ {\tmpslovenian} $\cdot$ {\tmpenglish} \\\\[1ex]%
+\parbox[b]{0.48\linewidth}{\includegraphics[height=4cm]{\tmpmaleimage}\\\\[-1.8ex]{\tiny \tmpmalesource}} \hspace*{\fill} %
+\parbox[b]{0.48\linewidth}{\includegraphics[height=4cm]{\tmpfemaleimage}\\\\[-1.8ex]{\tiny \tmpfemalesource}} \\\\[1ex] %
+\begin{minipage}[b]{0.55\textwidth} %
  \paragraph{Description:} \tmpdescription \paragraph{Song:} \tmpsongdescription %
  \end{minipage} \hfill %
- \begin{minipage}[t]{0.4\textwidth} \mbox{} \\\\[-2ex] %
-   \includegraphics[width=1.0\linewidth]{\tmpmaleimage}\\\\[-2ex]\hspace*{\fill}{\tiny \tmpmalesource} %
-   \includegraphics[width=1.0\linewidth]{\tmpfemaleimage}\\\\[-2ex]\hspace*{\fill}{\tiny \tmpfemalesource} %
-   \includegraphics[width=1.0\linewidth]{\tmpsongimage}\\\\[-2ex]\hspace*{\fill}{\tiny \tmpsongsource} %
+ \begin{minipage}[b]{0.4\textwidth} %
+   \includegraphics[width=1.0\linewidth]{\tmpsongimage}\\\\[-1.8ex]{\tiny \tmpsongsource} %
  \end{minipage}\vspace{2ex}\par}
 % 1 species
 % 2 german
@@ -43,7 +44,7 @@ cat <<EOF > species.tex
 % 11 song figure
 % 12 song figure source
 
-\usepackage{hyperref}
+\usepackage[colorlinks=true,urlcolor=black]{hyperref}
 
 \begin{document}
 

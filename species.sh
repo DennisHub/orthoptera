@@ -21,15 +21,15 @@ cat <<EOF > species.tex
 \def\tmpsongdescription{#1}%
 \def\tmpsongimage{#2}%
 \def\tmpsongsource{#3}%
-\subsection{\textit{\tmpname}} \begin{minipage}[t]{0.55\textwidth} %
- \tmpgerman $\cdot$ \tmpslovenian $\cdot$ \tmpenglish %
+\noindent\begin{minipage}[t]{0.55\textwidth} \subsubsection{\textit{\tmpname}}  %
+ {\tmpgerman} $\cdot$ {\tmpslovenian} $\cdot$ {\tmpenglish} %
  \paragraph{Description:} \tmpdescription \paragraph{Song:} \tmpsongdescription %
  \end{minipage} \hfill %
  \begin{minipage}[t]{0.4\textwidth} \mbox{} \\\\[-2ex] %
    \includegraphics[width=1.0\linewidth]{\tmpmaleimage}\\\\[-2ex]\hspace*{\fill}{\tiny \tmpmalesource} %
    \includegraphics[width=1.0\linewidth]{\tmpfemaleimage}\\\\[-2ex]\hspace*{\fill}{\tiny \tmpfemalesource} %
    \includegraphics[width=1.0\linewidth]{\tmpsongimage}\\\\[-2ex]\hspace*{\fill}{\tiny \tmpsongsource} %
- \end{minipage}}
+ \end{minipage}\vspace{2ex}\par}
 % 1 species
 % 2 german
 % 3 slovenia
@@ -42,6 +42,8 @@ cat <<EOF > species.tex
 % 10 song description
 % 11 song figure
 % 12 song figure source
+
+\usepackage[colorlink=true]{hyperref}
 
 \begin{document}
 

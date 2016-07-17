@@ -43,7 +43,7 @@ cat <<EOF > species.tex
 % 11 song figure
 % 12 song figure source
 
-\usepackage[colorlink=true]{hyperref}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -55,12 +55,14 @@ echo '\subsection{Ensifera}' >> species.tex
 for file in `find Ensifera -name '*.tex' | sort`; do
     echo "\\graphicspath{{${file%/*.tex}/}}"
     echo "\\input{$file}"
+    echo ""
 done >> species.tex
 
 echo '\subsection{Caelifera}' >> species.tex
 for file in `find Caelifera -name '*.tex' | sort`; do
     echo "\\graphicspath{{${file%/*.tex}/}}"
     echo "\\input{$file}"
+    echo ""
 done >> species.tex
 
 echo '\end{document}' >> species.tex

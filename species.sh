@@ -49,7 +49,14 @@ cat <<EOF > species.tex
 
 EOF
 
-for file in `find Orthoptera -name '*.tex' | sort`; do
+echo '\subsection{Ensifera}' >> species.tex
+for file in `find Ensifera -name '*.tex' | sort`; do
+    echo "\\graphicspath{{${file%/*.tex}/}}"
+    echo "\\input{$file}"
+done >> species.tex
+
+echo '\subsection{Caelifera}' >> species.tex
+for file in `find Caelifera -name '*.tex' | sort`; do
     echo "\\graphicspath{{${file%/*.tex}/}}"
     echo "\\input{$file}"
 done >> species.tex

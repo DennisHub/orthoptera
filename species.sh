@@ -21,16 +21,17 @@ cat <<EOF > species.tex
 \def\tmpsongdescription{#1}%
 \def\tmpsongimage{#2}%
 \def\tmpsongsource{#3}%
+\noindent\begin{minipage}{1\textwidth} %
 \subsubsection{\textit{\tmpname}} %
 \vspace{-1ex} {\tmpgerman} $\cdot$ {\tmpslovenian} $\cdot$ {\tmpenglish} \\\\[1ex]%
-\parbox[b]{0.48\linewidth}{\includegraphics[height=4cm]{\tmpmaleimage}\\\\[-1.8ex]{\tiny \tmpmalesource}} \hspace*{\fill} %
-\parbox[b]{0.48\linewidth}{\includegraphics[height=4cm]{\tmpfemaleimage}\\\\[-1.8ex]{\tiny \tmpfemalesource}} \\\\[1ex] %
-\begin{minipage}[b]{0.55\textwidth} %
+\parbox[b]{0.48\linewidth}{\includegraphics[height=38mm]{\tmpmaleimage}\\\\[-1.8ex]{\tiny \tmpmalesource}} \hspace*{\fill} %
+\parbox[b]{0.48\linewidth}{\includegraphics[height=38mm]{\tmpfemaleimage}\\\\[-1.8ex]{\tiny \tmpfemalesource}} \\\\[1ex] %
+\begin{minipage}[b]{0.48\textwidth} %
  \paragraph{Description:} \tmpdescription \paragraph{Song:} \tmpsongdescription %
  \end{minipage} \hfill %
- \begin{minipage}[b]{0.4\textwidth} %
+ \begin{minipage}[b]{0.48\textwidth} %
    \includegraphics[width=1.0\linewidth]{\tmpsongimage}\\\\[-1.8ex]{\tiny \tmpsongsource} %
- \end{minipage}\vspace{2ex}\par}
+ \end{minipage}\end{minipage}\vfill}
 % 1 species
 % 2 german
 % 3 slovenia

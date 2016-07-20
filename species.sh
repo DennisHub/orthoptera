@@ -53,13 +53,21 @@ cat <<EOF > $speciespath/species.tex
 
 \begin{document}
 
-\section{Orthoptera of Skocjan, Slovenia}
+\noindent\textbf{\LARGE Orthoptera of Skocjan, Slovenia}
 
 EOF
 
-echo '\subsection{Ensifera}' >> $speciespath/species.tex
+echo '\section{Ensifera}' >> $speciespath/species.tex
+family=""
 for file in `find Ensifera -name '*.tex' | sort`; do
     spath=${file%/*.tex}
+    sfamily=${spath#Ensifera/}
+    sfamily=${sfamily%/*}
+    sfamily=${sfamily%/*}
+    if test "$sfamily" != "$family"; then
+	echo "\subsection{${sfamily/\// --- }}"
+	family=$sfamily
+    fi
     for image in $spath/*.jpg $spath/*.png; do
 	imagename=${image##*/}
 	if test -f $image && ! test -f $speciespath/$imagename; then
@@ -72,9 +80,17 @@ for file in `find Ensifera -name '*.tex' | sort`; do
     echo ""
 done >> $speciespath/species.tex
 
-echo '\subsection{Caelifera}' >> $speciespath/species.tex
+echo '\section{Caelifera}' >> $speciespath/species.tex
+family=""
 for file in `find Caelifera -name '*.tex' | sort`; do
     spath=${file%/*.tex}
+    sfamily=${spath#Caelifera/}
+    sfamily=${sfamily%/*}
+    sfamily=${sfamily%/*}
+    if test "$sfamily" != "$family"; then
+	echo "\subsection{${sfamily/\// --- }}"
+	family=$sfamily
+    fi
     for image in $spath/*.jpg $spath/*.png; do
 	imagename=${image##*/}
 	if test -f $image && ! test -f $speciespath/$imagename; then

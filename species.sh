@@ -1,8 +1,12 @@
 #!/bin/bash
 
-cat <<EOF > species.tex
+speciespath="species"
+mkdir $speciespath
+
+cat <<EOF > $speciespath/species.tex
 \documentclass[11pt,a4paper]{article}
 \usepackage[top=20mm,left=20mm,right=20mm,bottom=20mm]{geometry}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \setcounter{secnumdepth}{-1}
 \newcommand{\species}[9]{%
@@ -22,10 +26,10 @@ cat <<EOF > species.tex
 \def\tmpsongimage{#2}%
 \def\tmpsongsource{#3}%
 \noindent\begin{minipage}{1\textwidth} %
-\subsubsection{\textit{\tmpname}} %
+\subsubsection[\tmpname]{\colorbox{black!20}{\rule[-1ex]{0pt}{3ex}\parbox{0.99\textwidth}{\textit{\tmpname}}}} %
 \vspace{-1ex} {\tmpgerman} $\cdot$ {\tmpslovenian} $\cdot$ {\tmpenglish} \\\\[1ex]%
-\parbox[b]{0.48\linewidth}{\includegraphics[height=38mm]{\tmpmaleimage}\\\\[-1.8ex]{\tiny \tmpmalesource}} \hspace*{\fill} %
-\parbox[b]{0.48\linewidth}{\includegraphics[height=38mm]{\tmpfemaleimage}\\\\[-1.8ex]{\tiny \tmpfemalesource}} \\\\[1ex] %
+\parbox[b]{0.48\linewidth}{\includegraphics[height=37mm]{\tmpmaleimage}\\\\[-1.8ex]{\tiny \tmpmalesource}} \hspace*{\fill} %
+\parbox[b]{0.48\linewidth}{\includegraphics[height=37mm]{\tmpfemaleimage}\\\\[-1.8ex]{\tiny \tmpfemalesource}} \\\\[1ex] %
 \begin{minipage}[b]{0.48\textwidth} %
  \paragraph{Description:} \tmpdescription \paragraph{Song:} \tmpsongdescription %
  \end{minipage} \hfill %
@@ -53,20 +57,40 @@ cat <<EOF > species.tex
 
 EOF
 
-echo '\subsection{Ensifera}' >> species.tex
+echo '\subsection{Ensifera}' >> $speciespath/species.tex
 for file in `find Ensifera -name '*.tex' | sort`; do
-    echo "\\graphicspath{{${file%/*.tex}/}}"
-    echo "\\input{$file}"
+    spath=${file%/*.tex}
+    for image in $spath/*.jpg $spath/*.png; do
+	imagename=${image##*/}
+	if test -f $image && ! test -f $speciespath/$imagename; then
+	    echo "converting " $imagename > /dev/stderr
+	    convert -resize 600 $image $speciespath/$imagename
+	fi
+    done
+    echo "collecting " ${file##*/} > /dev/stderr
+    cat $file
     echo ""
-done >> species.tex
+done >> $speciespath/species.tex
 
-echo '\subsection{Caelifera}' >> species.tex
+echo '\subsection{Caelifera}' >> $speciespath/species.tex
 for file in `find Caelifera -name '*.tex' | sort`; do
-    echo "\\graphicspath{{${file%/*.tex}/}}"
-    echo "\\input{$file}"
+    spath=${file%/*.tex}
+    for image in $spath/*.jpg $spath/*.png; do
+	imagename=${image##*/}
+	if test -f $image && ! test -f $speciespath/$imagename; then
+	    echo "converting " $imagename > /dev/stderr
+	    convert -resize 600 $image $speciespath/$imagename
+	fi
+    done
+    echo "collecting " ${file##*/} > /dev/stderr
+    cat $file
     echo ""
-done >> species.tex
+done >> $speciespath/species.tex
 
-echo '\end{document}' >> species.tex
+echo '\end{document}' >> $speciespath/species.tex
 
+cd $speciespath/
 pdflatex species.tex
+cp species.pdf ..
+cd -
+

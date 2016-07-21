@@ -8,6 +8,7 @@ cat <<EOF > $speciespath/species.tex
 \usepackage[top=20mm,left=20mm,right=20mm,bottom=20mm]{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{wasysym}
 \setcounter{secnumdepth}{-1}
 \newcommand{\species}[9]{%
 \def\tmpname{#1}%
@@ -49,11 +50,11 @@ cat <<EOF > $speciespath/species.tex
 % 11 song figure
 % 12 song figure source
 
-\usepackage[colorlinks=true,urlcolor=black]{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 
 \begin{document}
 
-\noindent\textbf{\LARGE Orthoptera of Skocjan, Slovenia}
+\noindent\textbf{\LARGE Orthoptera of \v{S}kocjan, Slovenia}
 
 EOF
 

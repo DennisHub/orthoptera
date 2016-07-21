@@ -1,0 +1,309 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=20mm,left=20mm,right=20mm,bottom=20mm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\setcounter{secnumdepth}{-1}
+\newcommand{\species}[9]{%
+\def\tmpname{#1}%
+\def\tmpgerman{#2}%
+\def\tmpslovenian{#3}%
+\def\tmpenglish{#4}%
+\def\tmpmaleimage{#5}%
+\def\tmpmalesource{#6}%
+\def\tmpfemaleimage{#7}%
+\def\tmpfemalesource{#8}%
+\def\tmpdescription{#9}%
+\speciescontinued
+}
+\newcommand\speciescontinued[3]{
+\def\tmpsongdescription{#1}%
+\def\tmpsongimage{#2}%
+\def\tmpsongsource{#3}%
+\noindent\begin{minipage}{1\textwidth} %
+\subsubsection[\tmpname]{\colorbox{black!20}{\rule[-1ex]{0pt}{3ex}\parbox{0.99\textwidth}{\textit{\tmpname}}}} %
+\vspace{-1ex} {\tmpgerman} $\cdot$ {\tmpslovenian} $\cdot$ {\tmpenglish} \\[1ex]%
+\parbox[b]{0.48\linewidth}{\includegraphics[height=37mm]{\tmpmaleimage}\\[-1.8ex]{\tiny \tmpmalesource}} \hspace*{\fill} %
+\parbox[b]{0.48\linewidth}{\includegraphics[height=37mm]{\tmpfemaleimage}\\[-1.8ex]{\tiny \tmpfemalesource}} \\[1ex] %
+\begin{minipage}[b]{0.48\textwidth} %
+ \paragraph{Description:} \tmpdescription \paragraph{Song:} \tmpsongdescription %
+ \end{minipage} \hfill %
+ \begin{minipage}[b]{0.48\textwidth} %
+   \includegraphics[width=1.0\linewidth]{\tmpsongimage}\\[-1.8ex]{\tiny \tmpsongsource} %
+ \end{minipage}\end{minipage}\vfill}
+% 1 species
+% 2 german
+% 3 slovenia
+% 4 english
+% 5 male photo
+% 6 male photo source
+% 7 female photo
+% 8 female photo source
+% 9 description
+% 10 song description
+% 11 song figure
+% 12 song figure source
+
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+
+\begin{document}
+
+\noindent\textbf{\LARGE Orthoptera of \v{S}kocjan, Slovenia}
+
+\section{Ensifera}
+\subsection{Tettigoniidae --- Tettigoniiae}
+\species{Andreiniimon nuptialis} % scientific name
+{NN} % german
+{NN} % slovenian
+{Splendid Bushcricket} % english
+{Andreiniimon_nuptialis} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{dat056-007-Andreiniimon-nuptialis} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Barbitistes yersini} % scientific name
+{Graugr\"une S\"abelschrecke} % german
+{yersinova krivocerka} % slovenian
+{Yersin's Bushcricket} % english
+{Barbitistes_yersini} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{dat047-002-Barbitistes-yersini} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Bicoloriana bicolor} % scientific name
+{Zweifarbige Beißschrecke} % german
+{zelenoproga dvobarvnica} % slovenian
+{Two-coloured Bush-cricket} % english
+{Bicolorana_bicolor_male} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{Bicolorana_bicolor_female} % photo female
+{\url{http://www.hlasek.com/foto/metrioptera_bicolor_bi1570.jpg}} % source
+{Green, topside brown, short winged, black stripe on the femur, relativly small, very long jumping legs} % description
+{} % sound description
+{Veneto-Bicolorana-bicolor} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Decticus verrucivorus} % scientific name
+{Warzenbei{\ss}er} % german
+{travni\v{s}ka plenilka / bradavi\v{c}arka} % slovenian
+{Wart-biter} % english
+{Decticus_verrucivorus_male}  % photo male
+{Fontana-Orthoptera-IT-2012} % source of photo
+{Decticus_verrucivorus_female} % photo female
+{Marcel Zurreck, marcel.zurreck.com} % source of photo
+{big and green, thick legs with thornes, in distal part legs get thin} % description
+{song sounds like a spinning wheel of fortune} % sound description
+{Decticus-verrucivorus-verrucivorus_song} % sound figure
+{Fontana-Orthoptera-IT-2012} % source of photo
+
+\species{Eupholidoptera chabrieri} % scientific name
+{Gr\"une Strauchschrecke} % german
+{celinska grmovnica} % slovenian
+{Chabrier's Bush-cricket} % english
+{Eupholidoptera_c_chabrieri_male}  % photo male
+{Fontana-Orthoptera-IT-2012} % source of photo
+{Eupholidoptera_chabrieri_female} % photo female
+{Wikipedia Species Pages - German} % source of photo
+{green with a yellow abdomen, black line from the neck to the front wings, green edge on the bottom of the pronotum} % description
+{single signals with big breaks in betweeen, gets faster over time} % sound description
+{Veneto-Euph_chabrieri-schabrieri_song} % sound figure
+{Fontana-Orthoptera-IT-2012} % source of photo
+
+\species{Leptophyes albovittata} % scientific name
+{Gestreifte Zartschrecke} % german
+{beloproga steblikovka} % slovenian
+{Striped Bushcricket} % english
+{Leptophyes_albovittata} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{Ode-Leptophyes-albovittata} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Leptophyes boscii} % scientific name
+{Boscis Zartschrecke} % german
+{\v{c}rnoroba steblikovka} % slovenian
+{Eastern Speckeled Bushcricket} % english
+{Leptophyes_boscii} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{Veneto-Leptophyes-boscii} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Pachytrachis gracilis} % scientific name
+{Zierliche S\"udschrecke} % german
+{vitka zalezovalka} % slovenian
+{Graceful Bushcricket (\textit{ex}: \url{http://www.ortheur.org})} % english
+{Pachytrachis_gracilis_male} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{Pachytrachis_gracilis_female} % photo female
+{\url{http://gallery.kunzweb.net/main.php?g2_view=core.DownloadItem&g2_itemId=69440&g2_serialNumber=3}} %
+{Topside brown, short winged, black stripe on the femur, relativly small, very long jumping legs, cerci long and straight} % description
+{burst of 5 syllables, sounds similar to litturalis} % sound description
+{Veneto-Pachytrachis-gracilis} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Pachytrachis striolatus} % scientific name
+{Gestreifte S\"{u}dschrecke} % german
+{zelenoproga dvobarvnica} % slovenian
+{Two-coloured Bush-cricket} % english
+{Pachytrachis_striolatus_male} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{Pachytrachis_striolatus_female} % photo female
+{\url{http://www.hlasek.com/foto/metrioptera_bicolor_bi1570.jpg}} %
+{Topside brown, short winged, black stripe on the femur, relativly small, very long jumping legs} % description
+{} % sound description
+{Veneto-Pachytrachis-striolatus} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Pholidoptera aptera} % scientific name
+{Alpen-Strauchschrecke} % german
+{jelenova cvr\v{c}alka} % slovenian
+{Alpine Dark Bush-cricket} % english
+{Pholidoptera_aptera_aptera_male} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{Pholidoptera_aptera_aptera_female} % photo female
+{\url{https://upload.wikimedia.org/wikipedia/commons/5/55/Pholidoptera_aptera_female_\%287974030148\%29.jpg}} %
+{Dark/ black colored, border of pronotum nearly white, short wings, male: cerci curved and hairy, female: ovipository as long as body, curved at the top} % description
+{about 6 separate syllables} % sound description
+{Veneto-Pholidoptera-aptera-aptera} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Pholidoptera littoralis} % scientific name
+{K\"usten-Strauchschrecke} % german
+{obalna cvr\v{c}alka} % slovenian
+{Littoral Bush-cricket} % english
+{Pholidoptera_l_littoralis_male} {Fontana-Orthoptera-IT-2012} % photo male
+{Pholidoptera_littoralis_female} {} % photo female
+{big, brown-red, white edge at the side of the protonum, to be sure you have to look for the tooth on the cerci} % description
+{song with a jarring, fast noise, continuous, with little breaks in it} % sound description
+{Pholidoptera-littoralis-littoralis_sound} {Fontana-Orthoptera-IT-2012} % sound figure
+
+
+\species{Platycleis grisea} % scientific name
+{Graue Bei{\ss}schrecke} % german
+{Siva popadavka} % slovenian
+{Grey Bush-cricket} % english
+{Platycleis_grisea_male} % photo male
+{} % source of photo
+{Platycleis_grisea_female}  % photo female
+{Christian Roesti, orthoptera.ch} % source of photo 
+{Brownish, long wings (longer than the knee of the hind leg), saddle reddish-brown pronotum, straight ovipositor} % description
+{soft song, not loud, low carrier frequency, pattern: 4-6 chirps} % sound description
+{Veneto-Platycleis-grisea-grisea} % sound figure
+{} % source of photo
+
+\species{Roeseliana roeselii} % scientific name
+{Roesels Bei{\ss}schrecke} % german
+{roeselova bilcnica} % slovenian
+{Roesel's Bushcricket} % english
+{Roeseliana_roeselii} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{Ode-Roeseliana-roeselii} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Ruspolia nitidula} % scientific name
+{Gro{\ss}e Schiefkopfschrecke} % german
+{travni\v{s}ka listarica} % slovenian
+{Large Conehead} % english
+{Ruspolia_nitidula} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{Veneto-Ruspolia-nitidula} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\species{Sepiana sepium} % scientific name
+{Zaunschrecke} % german
+{rede\v{c}erjava grmovka} % slovenian
+{Sepia Bushcricket (Red-faced Bushcricket, \textit{ex}: \url{http://www.ortheur.org})} % english
+{Sepiana_sepium} % photo male
+{Fontana-Orthoptera-IT-2012}%source
+{} % photo female
+{\url{}} % source
+{} % description
+{} % sound description
+{Veneto-Sepiana-sepium} % sound figure
+{Fontana-Orthoptera-IT-2012}%source
+
+\section{Caelifera}
+\subsection{Acrididae --- Gomphocerinae}
+\species{Euchorthippus declivus} % scientific name
+{Dickkopf-Grashuepfer} % german
+{Kratkokrila suhotravka} % slovenian
+{Jersey Grasshopper / Sharp-tailed Grasshopper} % english
+{Euchorthippus_declivus_male} % photo male
+{Der Kosmos Heuschreckenfuehrer} % source of photo
+{Euchorthippus_declivus_female} % photo female
+{Der Kosmos Heuschreckenfuehrer} % source of photo
+{Relatively large round head compared to body, body and wings beige, sharp tipped abdomen (males), white stripe on leg} % description
+{Short bursts of quick chirps with longer periods of intermittent silence} % sound description
+{Veneto-Euchorthippus-declivus} % sound figure
+{Fontana-Orthoptera-IT-2012} % source of photo
+
+
+\species{Euthystira brachyptera} % scientific name
+{Kleine Goldschrecke} % german
+{Zelena ble\v{s}\v{c}avka} % slovenian
+{Small Gold Grasshopper} % english
+{Euthystira_brachyptera_male} % photo male
+{Fontana-Orthoptera-IT-2012} % source of photo
+{Euthystira_brachyptera_female} % photo female
+{Der Kosmos Heuschreckenfuehrer} % source of photo
+{Fairly consistently green with golden sheen, sharp-tip abdomen, sharp-angled head} % description
+{} % sound description
+{Euthystira_brachyptera_song} % sound figure
+{Vedenina V, Mugue N. 2011. Speciation in gomphocerine
+grasshoppers: molecular phylogeny versus bioacoustics and
+courtship behavior. Journal of Orthoptera Research 20:
+109–125.} % source of photo
+
+
+\species{Omocestus rufipes} % scientific name
+{Buntbaeuchiger Grashuepfer} % german
+{Temna travni\v{c}arka} % slovenian
+{Woodland Grasshopper} % english
+{Omocestus_rufipes_male} % photo male
+{Fontana-Orthoptera-IT-2012} % source of photo
+{Omocestus_rufipes_female} % photo female
+{Der Kosmos Heuschreckenfuehrer} % source of photo
+{White mandibles, Black tiny body with red abdomen, colorful (reddish) hind legs with black knees} % description
+{Continuous with many chirps in quick succession (sounds like a bicycle when not pedaling and in motion)} % sound description
+{Veneto-Omocestus-rufipes} % sound figure
+{Fontana-Orthoptera-IT-2012} % source of photo
+
+
+\species{Stenobothrus lineatus} % scientific name
+{Heidegrashuepfer} % german
+{Beloproga regljalka} % slovenian
+{Stripe-winged grasshopper} % english
+{Stenobothrus_lineatus_male} % photo male
+{Fontana-Orthoptera-IT-2012} % source of photo
+{Stenobothrus_lineatus_female} % photo female
+{Der Kosmos Heuschreckenfuehrer} % source of photo
+{End of abdomen is typically red (in males), brown thorax plate, parallel lines within ``middle-field'' of long and transparent wings, wings broader than hind leg thickness} % description
+{alternates legs to make sound, continuous and intensifying wave-like song with peaks} % sound description
+{Stenobothrus_lineatus_song} % sound figure
+{Fontana-Orthoptera-IT-2012} % source of photo
+
+
+\end{document}

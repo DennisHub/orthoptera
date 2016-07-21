@@ -107,7 +107,7 @@ done >> $speciespath/species.tex
 echo '\end{document}' >> $speciespath/species.tex
 
 cd $speciespath/
-pdflatex species.tex
+pdflatex -interaction=scrollmode species.tex
 cp species.pdf ..
 cd -
 
